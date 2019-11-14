@@ -1,9 +1,9 @@
-package builder
+package com.example.tasks.demo.builder
 
-class Cake private constructor(cakeBuilder: CakeBuilder) {
-    private val age: Int = cakeBuilder.age
-    private val name: String? = cakeBuilder.name
-    private val color: String? = cakeBuilder.color
+class CakeForKotlin private constructor(cakeBuilder: CakeBuilder) {
+    val age: Int = cakeBuilder.age
+    val name: String? = cakeBuilder.name
+    val color: String? = cakeBuilder.color
 
     override fun toString(): String {
         return "Cake(age=$age, name=$name, color=$color)"
@@ -18,7 +18,7 @@ class Cake private constructor(cakeBuilder: CakeBuilder) {
         fun withName(name: String) = apply { this.name = name }
         fun withColor(color: String) = apply { this.color = color }
         fun build() =
-            Cake(this)
+            CakeForKotlin(this)
 
     }
 
